@@ -1,0 +1,22 @@
+.cuerpo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-items: flex-start;
+    background-color: aliceblue;
+}
+
+.hijo {
+    width: 150px;
+    padding: 0.2rem;
+    margin: 0.2rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: brown;
+    text-align: center;
+    font-size: 1.2rem;
+    color: blue;
+    background-color: cornsilk;
+    list-style: none;
+}

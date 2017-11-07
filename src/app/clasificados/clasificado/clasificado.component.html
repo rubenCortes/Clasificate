@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="avatar"></div>
+    <mat-card-title>{{mensaje.subCategoria.categoria.nombre}}</mat-card-title>
+    <mat-card-subtitle>{{mensaje.subCategoria.nombre}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="assets/img/infinito.jpg" alt="Infinito">
+  <mat-card-content>
+    <p>
+      {{mensaje.contenido}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>Re Publicar</button>
+    <button mat-button>Borrar</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,11 @@
+.tarjeta {
+    /* width: 280px; */
+    border-color: blue;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.avatar {
+    background-image: url('../../../assets/img/sg1.jpg');
+    background-size: cover;
+  }

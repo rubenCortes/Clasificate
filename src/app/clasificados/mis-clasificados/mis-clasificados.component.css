@@ -1,0 +1,23 @@
+.cuerpo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-items: flex-start;
+    background-color: aliceblue;
+}
+
+
+.boton-flotante {
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+  }
+
+  .mensaje {
+      width: 250px;
+      /* border-color: rgb(0, 255, 0);
+      border-style: solid;
+      border-width: 3px; */
+  }
+

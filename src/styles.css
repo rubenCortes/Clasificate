@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body{    
+    margin:0px;
+    height:100%;
+}
+
+.sombra {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: hsla(240, 20%, 50%, 0.5) 0px 0px 20px;
+    -webkit-box-shadow: hsla(240, 20%, 50%, 0.5) 0px 0px 20px;
+    box-shadow:  hsla(240, 20%, 50%, 0.5) 0px 0px 20px;
+}
+
+.titulo-formulario {
+    font-size: 3rem;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: hsla(230, 100%, 36%, 0.945);
+    color: white;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .titulo-formulario {
+        font-size: 2.7rem;
+    }    
+}
+
+@media (max-width: 568px) {
+    .titulo-formulario {
+        font-size: 2.4rem;
+    }    
+}
+
+@media (max-width: 480px) {
+    .titulo-formulario {
+        font-size: 1.8rem;
+        color: cyan;
+    }    
+}
+
+@media (max-width: 320px) {
+    .titulo-formulario {
+        font-size: 1.5rem;
+        color: yellow;
+    }
+}

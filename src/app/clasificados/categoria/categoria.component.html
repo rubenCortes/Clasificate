@@ -1,0 +1,17 @@
+<div class="cuerpo" >     
+  <ng-container  *ngFor="let categoria of categorias" > 
+    <ng-container *ngIf="categoria.subCategoriaLista.length > 0">
+    
+      <div class="hijo">
+        <button mat-raised-button class="boton" color=primary [matMenuTriggerFor]="appMenu" [hidden]="false">
+          {{categoria.nombre}}
+        </button>
+            
+        <mat-menu #appMenu="matMenu">
+          <button mat-menu-item *ngFor="let sub of categoria.subCategoriaLista" (click)="subCategoriaSeleccionada(sub.idSubCategoria)"> {{sub.nombre}} </button>
+        </mat-menu>   
+      </div>
+  
+    </ng-container>  
+  </ng-container>
+</div>

@@ -1,0 +1,19 @@
+<h3>
+  mis-clasificados works!
+</h3>
+<div *ngFor="let mensaje of mensajes">{{mensaje.contenido}}</div>
+<div class="container-fluid">
+  <div class="row">
+    <ng-container *ngFor="let mensaje of mensajes">
+      <div class="col">
+        <div class="mensaje mx-auto mx-sm-0 my-2">
+          <app-clasificado [mensaje]="mensaje"></app-clasificado>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<button mat-fab class="boton-flotante" >
+    <mat-icon (click) = "publicarClasificado()">add</mat-icon>
+</button>
