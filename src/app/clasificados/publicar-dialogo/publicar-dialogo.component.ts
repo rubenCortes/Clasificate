@@ -92,28 +92,25 @@ export class PublicarDialogoComponent implements OnInit {
        // const subcate = this.subCategorias[0] ;
        // alert(subcate.idSubCategoria);
       }
-    
+
       publicar(): void {
         if (this.usuario.estaLogueado) {
-          alert('Activo esta logueado');
           const miMensaje = new Mensaje();
           miMensaje.usuario = new Usuario();
           miMensaje.subCategoria = new SubCategoriaSimple();
-    
+ 
           const formulario = this.formularioPublicar.value;
-          alert('Antes de la suscripción');
           this.usuarioLogueado.
           subscribe(usuario =>  miMensaje.usuario.idUsuario = usuario.idUsuario );
-          alert('IdUsuario ' + miMensaje.usuario.idUsuario);
-    
+ 
           miMensaje.subCategoria.idSubCategoria = formulario.subCategoria as number;
           miMensaje.contenido = (formulario.mensaje as string).toUpperCase();
-    
+
           const mensaje = miMensaje.contenido;
           const subCategoria = miMensaje.subCategoria.idSubCategoria;
           const idUsuario = miMensaje.usuario.idUsuario;
           this.mensajeDatos.agregarMensaje(miMensaje)
-          .subscribe(respuesta => alert(respuesta), error => alert(error));
+          .subscribe(respuesta => alert('Mensaje creado...' + respuesta), error => alert(error));
         }
         this.dialogRef.close();
       }
@@ -131,7 +128,7 @@ export class PublicarDialogoComponent implements OnInit {
         }
 
         private procesaCategoria(lista: Categoria[]): void {
-          console.log('Inicio');
+
           this.categorias = lista.
           filter(x => x.subCategoriaLista.length > 0).
           sort( (a, b) => {
@@ -166,7 +163,7 @@ export class PublicarDialogoComponent implements OnInit {
               return 0;
             }
           });
-      
+
         }
   
   }

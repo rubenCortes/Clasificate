@@ -20,6 +20,10 @@ export class MensajeService {
         return this.http.get<Mensaje[]>(this.datosMensaje + 'usuario/' + id);
       }
 
+      getMensajesPorSubCategoria(id: number): Observable<Mensaje[]> {
+        return this.http.get<Mensaje[]>(this.datosMensaje + 'subcategoria/' + id);
+      }
+
       agregarMensaje(mensaje: Mensaje): Observable<string> {
         const cabecera = new HttpHeaders({ 'Content-Type': 'application/json' });
         const body = JSON.stringify(mensaje);

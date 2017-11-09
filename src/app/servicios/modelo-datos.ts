@@ -36,6 +36,7 @@ export class Categoria {
 export class SubCategoriaSimple {
     idSubCategoria = 0;
     nombre = '';
+    numeroMensajes = 0;
 }
 
 export class SubCategoria {

@@ -1,13 +1,12 @@
 <h3>
   mis-clasificados works!
 </h3>
-<div *ngFor="let mensaje of mensajes">{{mensaje.contenido}}</div>
 <div class="container-fluid">
   <div class="row">
-    <ng-container *ngFor="let mensaje of mensajes">
+    <ng-container *ngFor="let mensaje of mensajes$ | async">
       <div class="col">
-        <div class="mensaje mx-auto mx-sm-0 my-2">
-          <app-clasificado [mensaje]="mensaje"></app-clasificado>
+        <div class="mx-auto mx-sm-0 my-2" style="width: 250px">
+          <app-clasificado [mensaje]="mensaje" general="false"></app-clasificado>
         </div>
       </div>
     </ng-container>

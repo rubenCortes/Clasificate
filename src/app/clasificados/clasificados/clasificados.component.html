@@ -1,0 +1,14 @@
+<p>
+  clasificados works!
+</p>
+<div class="container-fluid">
+  <div class="row">
+    <ng-container *ngFor="let mensaje of mensajes$ | async">
+      <div class="col">
+          <div class="mx-auto mx-sm-0 my-2" style="width: 250px">
+            <app-clasificado [mensaje]="mensaje" general="true"></app-clasificado>
+          </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

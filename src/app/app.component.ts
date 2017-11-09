@@ -15,7 +15,7 @@ export class AppComponent {
   private title = 'Clasificate';
   private usuarioLogueado: Observable<Usuario>;
   private subMenuUsuario = false;
-
+  private numero = '4120814720';
   constructor(  private autenticar: UsuarioService  ) {
     this.usuarioLogueado = this.autenticar.obtenerUsuarioLogueado();
   }

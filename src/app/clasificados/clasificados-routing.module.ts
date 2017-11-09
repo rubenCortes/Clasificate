@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { MisClasificadosComponent } from './mis-clasificados/mis-clasificados.component';
 import { ClasificadoPublicarComponent } from './clasificado-publicar/clasificado-publicar.component';
+import { ClasificadosComponent } from './clasificados/clasificados.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,12 @@ const routes: Routes = [
   {
     path: 'publicar',
     component: ClasificadoPublicarComponent
+  },
+  {
+    path: 'clasificados/:idSubCategoria',
+    component: ClasificadosComponent
   }
+
 ];
 
 @NgModule({

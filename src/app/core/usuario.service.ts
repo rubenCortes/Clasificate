@@ -68,20 +68,7 @@ export class UsuarioService {
   }
 */
 
-  /*
-  manejadorError(err: HttpErrorResponse | any) {
-    // In a real world app, you might use a remote logging infrastructure
-    let errMsg: string;
-    if (err.error instanceof Error) {
-      errMsg = `Código: ${err.status}, Descripción: ${err.error.message}`;
-    } else {
-      console.log('Error no es response');
-      errMsg = err.message ? err.message : err.toString();
-    }
-    console.error('Error al agregar: ' + errMsg);
-    return Observable.throw(errMsg);
-   }
-*/
+
 
 
 login(correo: string, clave: string): Observable<Usuario> {

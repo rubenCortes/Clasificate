@@ -35,13 +35,13 @@ export class CategoriaComponent implements OnInit {
     this.datos.getCategorias().subscribe(observador);
   }
 
-  subCategoriaSeleccionada(subCategoria: number): void {
+  subCategoriaSeleccionada(idSubCategoria: number): void {
     // Al suscribirse en el componente appComponent se puede obtener
     // la lista de todos los estados y poblaciones en donde hayan
     // avisos de la subcategoria seleccionada
-    this.categoriaComunicacion.subCategoriaComponente(subCategoria);
+    // this.categoriaComunicacion.subCategoriaComponente(idSubCategoria);
     // Rutear al componente mensaje-lista
-    this.router.navigate(['/mensaje_lista', subCategoria ]);
+    this.router.navigate(['/clasificados', idSubCategoria ]);
   }
 
 

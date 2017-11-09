@@ -9,10 +9,13 @@ import { ClasificadoDetalleComponent } from './clasificado-detalle/clasificado-d
 import { MisClasificadosComponent } from './mis-clasificados/mis-clasificados.component';
 import { ClasificadoPublicarComponent } from './clasificado-publicar/clasificado-publicar.component';
 import { PublicarDialogoComponent } from './publicar-dialogo/publicar-dialogo.component';
+import { ClasificadosComponent } from './clasificados/clasificados.component';
+import { TuberiasModule } from '../tuberias/tuberias.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    TuberiasModule,
     ReactiveFormsModule,
     MaterialPersonalizadoModule,
     ClasificadosRoutingModule,
@@ -23,7 +26,8 @@ import { PublicarDialogoComponent } from './publicar-dialogo/publicar-dialogo.co
     ClasificadoDetalleComponent,
     MisClasificadosComponent,
     ClasificadoPublicarComponent,
-    PublicarDialogoComponent
+    PublicarDialogoComponent,
+    ClasificadosComponent,
   ],
   entryComponents: [PublicarDialogoComponent]
 })

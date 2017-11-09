@@ -8,10 +8,20 @@
   <mat-card-content>
     <p>
       {{mensaje.contenido}}
-    </p>
+    </p> 
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>Re Publicar</button>
-    <button mat-button>Borrar</button>
+  <mat-card-actions class="text-center">
+    <div *ngIf="general === 'false'" >
+        <button mat-button>Re Publicar</button>
+        <button mat-button>Borrar</button>
+    </div>      
   </mat-card-actions>
+  <mat-card-footer class="text-center">
+    <div *ngIf="general === 'true'">
+      <strong>{{mensaje.usuario.telefono | telefono}}</strong>
+    </div>
+    <div class="mb-2">
+      publicacion: <strong>{{mensaje.creacion | date:'mediumDate':'':'es-VE'}}</strong>        
+    </div>
+  </mat-card-footer>
 </mat-card>

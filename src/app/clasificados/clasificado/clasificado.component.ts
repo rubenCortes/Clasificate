@@ -13,6 +13,7 @@ export class ClasificadoComponent implements OnInit {
   private contenido = 'Vendo casa, buena, bonita y barara, ubicada en urbanización Lomas del Viento';
 
   @Input() mensaje: Mensaje;
+  @Input() general: boolean;
 
   constructor() { }
 
