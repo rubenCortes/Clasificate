@@ -9,7 +9,7 @@
 <mat-sidenav-container class="contenedor">
   <mat-sidenav #sidenav>
     <mat-nav-list>
-      <a mat-list-item (click)="sidenav.close(); mostrarSubMenu(1)" routerLink="/categoria" routerLinkActive="active">Clasificados</a>
+      <a mat-list-item (click)="sidenav.close(); mostrarSubMenu(1)" routerLink="/clasificados" routerLinkActive="active">Clasificados</a>
       <a mat-list-item (click)="sidenav.close(); mostrarSubMenu(1)" routerLink="/misclasificados" routerLinkActive="active">Mis Clasificados</a>
       <a mat-list-item class="auxiliar" (click)="mostrarSubMenu()" routerLink="/" routerLinkActive="active">Usuario</a>
       <div *ngIf="subMenuUsuario" [@subMenuUsuario] = "'entrada'" class="sub-menu">

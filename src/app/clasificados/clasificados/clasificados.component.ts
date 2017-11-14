@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import { Observable } from 'rxjs/Observable';
 
-import { Mensaje } from '../../servicios';
+import { Mensaje, RespuestaFiltro } from '../../servicios';
 import { MensajeService } from '../../core';
 
 @Component({
@@ -22,11 +22,14 @@ export class ClasificadosComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.route.paramMap.subscribe(parametro => alert(parametro.get('idSubCategoria')));
-   this.mensajes$ = this.route.paramMap.
-   switchMap( (parametro: ParamMap) => this.mensajeDatos.getMensajesPorSubCategoria(+parametro.get('idSubCategoria')) ) ;
 
-    // this.hero$ = this.route.paramMap.switchMap((params: ParamMap) => this.service.getHero(params.get('id')));
+    this.mensajes$ = this.mensajeDatos.getMensajes();
+  //  this.mensajes$ = this.route.paramMap.
+  //  switchMap( (parametro: ParamMap) => this.mensajeDatos.getMensajesPorSubCategoria(+parametro.get('idSubCategoria')) ) ;
+
+  }
+  procesaFiltro(ent: RespuestaFiltro): void {
+    this.mensajes$ = this.mensajeDatos.getMensajesFiltrados(ent);
   }
 
 }

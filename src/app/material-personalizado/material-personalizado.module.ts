@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import {MatListModule} from '@angular/material';
+import {MatListModule} from '@angular/material/list';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material';
-import {MatSidenavModule} from '@angular/material';
-import {MatMenuModule} from '@angular/material';
-import {MatInputModule} from '@angular/material';
-import {MatSelectModule} from '@angular/material';
-import {MatButtonModule} from '@angular/material';
-import {MatIconModule} from '@angular/material';
-import {MatSnackBarModule} from '@angular/material';
-import {MatCardModule} from '@angular/material';
-import {MatFormFieldModule} from '@angular/material';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatToolbarModule,
     MatCardModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatExpansionModule
   ],
   exports: [
     BrowserAnimationsModule,
@@ -45,7 +47,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatToolbarModule,
     MatCardModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatExpansionModule
   ],
   declarations: []
 })

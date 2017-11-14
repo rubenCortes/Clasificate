@@ -2,6 +2,7 @@
   clasificados works!
 </p>
 <div class="container-fluid">
+  <app-clasificado-filtro (resultado) = "procesaFiltro($event)"></app-clasificado-filtro>
   <div class="row">
     <ng-container *ngFor="let mensaje of mensajes$ | async">
       <div class="col">

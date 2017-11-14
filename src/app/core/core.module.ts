@@ -5,6 +5,8 @@ import { UsuarioService } from './usuario.service';
 import { CategoriaService } from './categoria.service';
 import { CategoriaComunicacionService } from './categoria-comunicacion.service';
 import { MensajeService } from './mensaje.service';
+import { PaisService } from './pais.service';
+import { PoblacionService } from './poblacion.service';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { MensajeService } from './mensaje.service';
     UsuarioService,
     CategoriaService,
     CategoriaComunicacionService,
-    MensajeService
+    MensajeService,
+    PaisService,
+    PoblacionService
   ]
 })
 export class CoreModule { }

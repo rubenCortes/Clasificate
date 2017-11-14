@@ -19,7 +19,7 @@ const routes: Routes = [
     component: ClasificadoPublicarComponent
   },
   {
-    path: 'clasificados/:idSubCategoria',
+    path: 'clasificados',
     component: ClasificadosComponent
   }
 

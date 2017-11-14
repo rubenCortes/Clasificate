@@ -11,6 +11,7 @@ import { ClasificadoPublicarComponent } from './clasificado-publicar/clasificado
 import { PublicarDialogoComponent } from './publicar-dialogo/publicar-dialogo.component';
 import { ClasificadosComponent } from './clasificados/clasificados.component';
 import { TuberiasModule } from '../tuberias/tuberias.module';
+import { ClasificadoFiltroComponent } from './clasificado-filtro/clasificado-filtro.component';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { TuberiasModule } from '../tuberias/tuberias.module';
     ClasificadoPublicarComponent,
     PublicarDialogoComponent,
     ClasificadosComponent,
+    ClasificadoFiltroComponent,
   ],
   entryComponents: [PublicarDialogoComponent]
 })

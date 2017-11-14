@@ -1,0 +1,46 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    Filtrar clasificados
+  </mat-expansion-panel-header>
+
+  <form class="container text-center" style="max-width:640px" [formGroup]="formularioFiltrar"  novalidate>
+    <div class="row justify-content-around">
+      <mat-form-field class="campo col-12 col-sm-6 col-md-3">
+        <mat-select  placeholder="Categoría" formControlName="categoria" (change)="llenarSubCategorias()">
+          <mat-option *ngFor="let categoria of categorias$ | async" [value]="categoria.idCategoria">
+            {{categoria.nombre}}  <span class="numero-mensaje">({{categoria.numeroMensajes}})</span>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="campo col-12 col-sm-6 col-md-3">
+        <mat-select  placeholder="SubCategoría" formControlName="subCategoria" (change)="refrescarDatos()">
+          <mat-option *ngFor="let subCategoria of subCategorias$ | async" [value]="subCategoria.idSubCategoria">
+            {{subCategoria.nombre}} <span class="numero-mensaje">({{subCategoria.numeroMensajes}})</span>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="campo col-12 col-sm-6 col-md-3">
+        <mat-select  placeholder="Estado" formControlName="estado" (change)="llenarPoblaciones()">
+          <mat-option *ngFor="let estado of estados$ | async" [value]="estado.idEstadoRegion">
+            {{estado.nombre}}<span class="numero-mensaje">({{estado.numeroMensajes}})</span>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="campo col-12 col-sm-6 col-md-3">
+        <mat-select  placeholder="Población" formControlName="poblacion" >
+          <mat-option *ngFor="let poblacion of poblaciones$ | async" [value]="poblacion.idPoblacion">
+            {{poblacion.nombre}}<span class="numero-mensaje">({{poblacion.numeroMensajes}})</span>
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+  </form>
+
+  <mat-action-row>
+    <div>
+          <button mat-button color="primary" (click)="onSubmit()">Aplicar</button>
+          <button mat-button color="primary" (click)="restablecer()">Cancelar</button>
+    </div>
+  </mat-action-row>
+</mat-expansion-panel>

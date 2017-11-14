@@ -31,6 +31,7 @@ export class Categoria {
     idCategoria = 0;
     nombre = '';
     subCategoriaLista?: SubCategoriaSimple[];
+    numeroMensajes = 0;
 }
 
 export class SubCategoriaSimple {
@@ -57,4 +58,12 @@ export class Mensaje {
     subCategoria: SubCategoriaSimple;
     usuario: Usuario;
     imagen?: Imagen[];
+}
+
+export class RespuestaFiltro {
+    idCategoria = 0;
+    idSubCategoria = 0;
+    idEstadoRegion = 0;
+    idPoblacion = 0;
+    cancelar = 0;
 }
