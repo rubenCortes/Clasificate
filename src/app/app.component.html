@@ -14,22 +14,27 @@
       <a mat-list-item class="auxiliar" (click)="mostrarSubMenu()" routerLink="/" routerLinkActive="active">Usuario</a>
       <div *ngIf="subMenuUsuario" [@subMenuUsuario] = "'entrada'" class="sub-menu">
         <a mat-list-item (click)="sidenav.close()" routerLink="/login" routerLinkActive="active">LogIn</a>
-        <a mat-list-item routerLink="/" routerLinkActive="active" >LogOut</a>
+        <a mat-list-item (click)="sidenav.close()" routerLink="/logout" routerLinkActive="active" >LogOut</a>
         <a mat-list-item (click)="sidenav.close()" routerLink="/usuario/validar" routerLinkActive="active" >Registrar</a>
-        <a mat-list-item *ngIf="nombreUsuario" [matMenuTriggerFor]="menuEditar" >Editar</a>
-        <mat-menu #menuEditar="matMenu" xPosition="before">
-          <mat-nav-list>
-            <a mat-list-item (click)="sidenav.close(); mostrarSubMenu()" routerLink="/usuario/modi-clave" routerLinkActive="active"> Modificar clave </a>
-            <a mat-list-item (click)="sidenav.close(); mostrarSubMenu()" routerLink="/usuario/modi-tel" routerLinkActive="active"> Modificar telefono </a>
-            <a mat-list-item (click)="sidenav.close(); mostrarSubMenu()" routerLink="/usuario/modi-datos" routerLinkActive="active"> Modificar datos </a>
-            <a mat-list-item (click)="sidenav.close(); mostrarSubMenu()"> Volver </a>
-          </mat-nav-list>
-        </mat-menu>
+        <div *ngIf="usuarioLogueado | async as usuariolocal">
+          <div *ngIf="usuariolocal.nombre !== ''">
+            <a mat-list-item  [matMenuTriggerFor]="menuEditar" >Editar</a>
+            <mat-menu #menuEditar="matMenu" xPosition="before">
+              <mat-nav-list>
+                <a mat-list-item (click)="sidenav.close(); mostrarSubMenu()" routerLink="/usuario/modi-clave" routerLinkActive="active"> Modificar clave </a>
+                <a mat-list-item (click)="sidenav.close(); mostrarSubMenu()" routerLink="/usuario/modi-tel" routerLinkActive="active"> Modificar telefono </a>
+                <a mat-list-item (click)="sidenav.close(); mostrarSubMenu()" routerLink="/usuario/modi-datos" routerLinkActive="active"> Modificar datos </a>
+                <a mat-list-item (click)="sidenav.close(); mostrarSubMenu()"> Volver </a>
+              </mat-nav-list>
+            </mat-menu>    
+          </div>
+        </div>
       </div>
     </mat-nav-list>
   </mat-sidenav>
     contenido primario
     {{numero | telefono}}
+
   
     <router-outlet></router-outlet>
     

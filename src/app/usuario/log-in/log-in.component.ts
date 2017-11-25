@@ -85,7 +85,13 @@ export class LogInComponent implements OnInit {
   }
 
   onSubmit() {
-    const destino: string = this.autenticacion.urlDestino;
+    let destino: string
+    if (this.autenticacion.urlDestino == null) {
+      destino = '/clasificados';
+    } else {
+      destino = this.autenticacion.urlDestino;
+    }
+    
     this.validador = this.validarFormulario.value;
     this.autenticacion.login(this.validador.correo, this.validador.clave)
     .subscribe(() => this.router.navigate([destino]),

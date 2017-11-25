@@ -1,3 +1,57 @@
-<p>
-  formulario-datos works!
-</p>
+<h3>
+    formulario-datos Funciona!
+  </h3>
+  
+  <form class="container text-center" style="max-width:640px" [formGroup]="formularioDatos" (ngSubmit)="onSubmit()" novalidate>
+    <div class="sombra titulo-formulario mb-2 py-2">
+      Formulario de Registro
+    </div>
+    <div class="sombra py-4 px-3">
+      <div class="row">
+        <mat-form-field class="campo col-12 col-sm-6">
+          <input type="text" matInput placeholder="Nombre" formControlName="nombre">
+          <mat-error *ngIf="erroresFormulario.nombre">
+            {{ erroresFormulario.nombre }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="campo col-12 col-sm-6">
+          <input type="text" matInput placeholder="Apellido" formControlName="apellido">
+          <mat-error *ngIf="erroresFormulario.apellido">
+            {{ erroresFormulario.apellido }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="campo col-12 col-sm-6">
+          <mat-select placeholder="Estado" formControlName="estado" (change)="llenarListaPoblacion()">
+            <mat-option *ngFor="let estado of estadoLista" [value]="estado.idEstadoRegion">
+              {{estado.nombre}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>  
+        <mat-form-field class="campo col-12 col-sm-6">
+          <mat-select  placeholder="Población" formControlName="poblacion" >
+            <mat-option *ngFor="let poblacion of poblacionLista" [value]="poblacion.idPoblacion">
+              {{poblacion.nombre}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <button mat-button color="primary" type="submit" [disabled]="!estadoFormulario" >{{nombreBotonAceptar}}</button>
+          <button mat-button color="primary" type="reset" (click)="revert()" >Cancelar</button>
+        </div>      
+      </div> 
+  
+    </div>
+    <!--
+      <button type="submit"
+      [disabled]="heroForm.pristine" class="btn btn-success">Save</button>
+    
+      <a class="hipervinculo" routerLink="/usuario" routerLinkActive="active">¿Desea registrarse?</a>
+    -->
+  </form>
+  
+    <p>Form value: {{ formularioDatos.value | json }}</p>
+    <p>Form status: {{ formularioDatos.status | json }}</p>
+  

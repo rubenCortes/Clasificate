@@ -4,7 +4,7 @@ import { Observer } from 'rxjs/Observer';
 import { Subject } from 'rxjs/Subject';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
@@ -38,6 +38,20 @@ export class UsuarioService {
     return this.http
     .get<Usuario>(this.datosUsuario + 'validar/' + correo + '/' + clave);
   }
+
+  agregarUsuario(usuario: Usuario): Observable<string> {
+    const cabecera = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = JSON.stringify(usuario);
+    return this.http.post<string>(this.datosUsuario, body, {headers: cabecera});
+  }
+
+
+  modificarUsuario(usuario: Usuario): Observable<Usuario> {
+    const cabecera = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = JSON.stringify(usuario);
+    return this.http.put<Usuario>(this.datosUsuario + usuario.idUsuario, body, {headers: cabecera});
+  }
+
 
 /*
   agregarUsuario(usuario: Usuario): Observable<Response> {

@@ -1,13 +1,38 @@
-<p> 
-  modificar-telefono works!
-</p>
-
-<form class="container text-center" style="max-width:640px" [formGroup]="formModiTel" (ngSubmit)="onSubmit()" novalidate>
+<h3>
+    formulario-validacion works! Anfitrion: {{anfitrion}}
+  </h3>
+  
+  <form class="container text-center" style="max-width:640px" [formGroup]="formularioValidacion" (ngSubmit)="onSubmit()" novalidate>
     <div class="sombra titulo-formulario mb-2 py-2">
       Formulario de Validación
     </div>
     <div class="sombra py-4 px-3">
-
+      <div class="row">
+        <mat-form-field class="campo col-12 col-sm-6">
+          <input matInput placeholder="Correo" formControlName="correo">
+          <mat-error *ngIf="erroresFormulario.correo">
+            {{ erroresFormulario.correo }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="campo col-12 col-sm-6">
+          <input matInput placeholder="Repetir correo" formControlName="correo_repetir">
+          <mat-error *ngIf="erroresFormulario.correo_repetir">
+            {{ erroresFormulario.correo_repetir }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="campo col-12 col-sm-6">
+          <input type="password" matInput placeholder="Clave" formControlName="clave">
+          <mat-error *ngIf="erroresFormulario.clave">
+            {{ erroresFormulario.clave }}
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="campo col-12 col-sm-6">
+          <input type="password" matInput placeholder="Repetir clave" formControlName="clave_repetir">
+          <mat-error *ngIf="erroresFormulario.clave_repetir">
+            {{ erroresFormulario.clave_repetir }}
+          </mat-error>
+        </mat-form-field>
+      </div>
       <div class="row justify-content-center">
         <div class="col-12 col-sm-6">
           <mat-form-field class="campo">
@@ -19,7 +44,7 @@
         </div>
       </div>
         
-      <div class="row justify-content-center">
+      <div class="row">
         <div class="col"></div>
         <div class="col">
             <div style="border: 1px solid red; background-color: yellow; text-align:center" id="recaptcha-container"></div>  
@@ -69,5 +94,7 @@
   <!--
   <p>Confirmacion Result: {{ windowRef?.confirmationResult | json }}</p>
   -->
-  <p>Form value: {{ formModiTel.value | json }}</p>
-  <p>Form status: {{ formModiTel.status | json }}</p>
+  <p>Form value: {{ formularioValidacion.value | json }}</p>
+  <p>Form status: {{ formularioValidacion.status | json }}</p>
+  
+  

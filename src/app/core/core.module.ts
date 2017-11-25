@@ -7,6 +7,7 @@ import { CategoriaComunicacionService } from './categoria-comunicacion.service';
 import { MensajeService } from './mensaje.service';
 import { PaisService } from './pais.service';
 import { PoblacionService } from './poblacion.service';
+import { WindowService } from './window.service';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { PoblacionService } from './poblacion.service';
     CategoriaComunicacionService,
     MensajeService,
     PaisService,
-    PoblacionService
+    PoblacionService,
+    WindowService
   ]
 })
 export class CoreModule { }

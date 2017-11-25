@@ -5,7 +5,6 @@ import { UsuarioRoutingModule } from './usuario-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { FormularioDatosComponent } from './formulario-datos/formulario-datos.component';
-import { FormulariValidacionComponent } from './formulari-validacion/formulari-validacion.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { LogOutComponent } from './log-out/log-out.component';
 import { ModificarClaveComponent } from './modificar-clave/modificar-clave.component';
@@ -13,6 +12,8 @@ import { ModificarDatosComponent } from './modificar-datos/modificar-datos.compo
 import { ModificarTelefonoComponent } from './modificar-telefono/modificar-telefono.component';
 import { RegistroDatosComponent } from './registro-datos/registro-datos.component';
 import { ValidarDatosComponent } from './validar-datos/validar-datos.component';
+import { FormularioValidacionComponent } from './formulario-validacion/formulario-validacion.component';
+import { UsuarioRaizComponent } from './usuario-raiz/usuario-raiz.component';
 
 @NgModule({
   imports: [
@@ -23,14 +24,15 @@ import { ValidarDatosComponent } from './validar-datos/validar-datos.component';
   ],
   declarations: [
     FormularioDatosComponent,
-    FormulariValidacionComponent,
     LogInComponent,
     LogOutComponent,
     ModificarClaveComponent,
     ModificarDatosComponent,
     ModificarTelefonoComponent,
     RegistroDatosComponent,
-    ValidarDatosComponent
+    ValidarDatosComponent,
+    FormularioValidacionComponent,
+    UsuarioRaizComponent
   ]
 })
 export class UsuarioModule { }
